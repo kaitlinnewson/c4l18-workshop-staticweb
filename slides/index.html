@@ -32,6 +32,26 @@
 				</section>
 
 				<section>
+					<h2>Outline/Agenda</h2>
+					<ol>
+						<li>Installing Hugo &amp; troubleshooting</li>
+						<li>Background - what are static site generators, and why should I use them?</li>
+						<li>Creating content in Markdown</li>
+						<li>Making our own static sites with Hugo</li>
+						<li>Publishing to Github Pages</li>
+						<li>Other useful tools</li>
+						<li>Discussion</li>
+					</ol>
+				</section>
+
+				<section>
+					<h2>Installing Hugo</h2>
+					<p><a href="https://gohugo.io/getting-started/installing/"></a>></p>
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<section>
 						<h2>What is a static website?</h2>
 						<ul>
 							<li>Made up of HTML, CSS, &amp; JavaScript</li>
@@ -79,11 +99,16 @@
 						<aside class="notes">
 							Static site generators are not without their disadvantages. They don't have an admin interface or an editing environment like a content management system does, so there's some technical skill required to update the site. There are tools being developed to improve on this, but at this point there's still some technical knowledge needed to do content updates. At Scholars Portal, we've been using the editor built into Github for some basic content editing.
 
-							Since some technical skill is required, there can be a bit of a learning curve involved with static generators. You need to understand some HTML and CSS, some command line and git basics, and if you want to do a lot of site customization, you'll need to learn the templating language that's being used. These may be barriers for and less technical people involved in the web development process.
+							Since some technical skill is required, there can be a bit of a learning curve involved with static generators. You need to understand some HTML and CSS, some command line and git basics, and if you want to do a lot of site customization, you'll need to learn the templating language that's being used. These may be barriers for any less technical people involved in the web development process.
 
 							Finally, because they are static, static sites don't have the option for dynamic elements, like user accounts or other kinds of interaction with a user.
 						</aside>
 					</ul>
+				</section>
+
+				<section>
+					<h2>Markdown</h2>
+					<p></p>
 				</section>
 
 				<section>
@@ -109,264 +134,35 @@
 				</section>
 
 				<section>
-					<h2>Basic Hugo workflow feat. maps!</h2>
-					<img src="img/topomaps.png">
-					<p><a href="http://ocul.on.ca/topomaps">ocul.on.ca/topomaps</a> | <a href="https://github.com/scholarsportal/historical-topos">github.com/scholarsportal/historical-topos</a></p>
-					<aside class="notes">
-						Now I'm going to go through some of the Hugo workflow and pieces. I'll look at this through the lens of a recent website I built for the Ontario Council of University Libraries Historical Topographic Maps digitization project. This was part of a larger project done by the OCUL geo community to digitize a large collection of over 1000 maps.
-					</aside>
+					<h2>Creating a static site</h2>
 				</section>
 
 				<section>
-					<h2>Install</h2>
-					<p>snap package, homebrew, single binary download</p>
-					<aside class="notes">
-					</aside>
-				</section>
-
-				<section>
-					<h2>Create the site</h2>
-					<pre><code>
-hugo new site topomaps
-					</code></pre>
-					<section>
-					<pre><code>
-▸ archetypes/
-▸ content/
-▸ data/
-▸ i18n/
-▸ layouts/
-▸ static/
-▸ themes/
-  config.toml
-					</code></pre>
-					</section>
-					<aside class="notes">
-						With a new site, we start by running the Hugo new site command. This creates the folders and files that a hugo site needs.
-					</aside>
-				</section>
-
-				<section>
-					<h2>Add a theme</h2>
-					<p><a href="http://themes.gohugo.io/hugo-creative-portfolio-theme/">themes.gohugo.io/hugo-creative-portfolio-theme</a></p>
-					<img src="img/creativeportfolio.png" alt="a screenshot of the hugo creative portfolio theme page on hugo's website">
-					<pre><code>
-cd themes
-git clone https://github.com/kishaningithub/hugo-creative-portfolio-theme.git
-					</code></pre>
-				</section>
-
-				<section>
-					<h2>Theme example site</h2>
-					<p>Many themes have an example site that you can copy to get started</p>
-					<pre><code>
-cp -r themes/hugo-creative-portfolio-theme/exampleSite/* .
-					</code></pre>
-				</section>
-
-				<section>
-					<h2>Built-in development server</h2>
-					<img src="img/cliserver.png">
-				</section>
-
-				<section>
-					<img src="img/localhost.png">
-				</section>
-
-				<section>
-					<h2>Configuration &amp; Content</h2>
+					<h2>Set up uour repo</h2>
 					<ul>
-						<li>The configuration file (toml, yaml, or json) contains menus, metadata, etc.</li>
-						<li>Content lives in the <code>content/</code> and <code>data/</code> folders</li>
-						<li>Assets (e.g. images, custom CSS &amp; JavaScript) live in <code>static/</code></li>
+						<li>Create a repo for your site on Github</li>
 					</ul>
-					<aside class="notes">
-					The config file can be a toml, yaml, or json file. This file is where you set things like the theme, the menu items, or the languages.
-					The data folder may contain data used in the site, like a json file for example.
-					Your static folder has any assets you use in the site, like custom css or javascript, or images.
-					</aside>
+					<aside class="notes">This is optional - if you don't want to publish your site on Github pages, you can skip this</aside>
 				</section>
 
 				<section>
-					<h2>config.toml</h2>
-					<pre><code>
-baseurl = "http://ocul.on.ca/topomaps/"
-theme = "hugo-creative-portfolio-theme"
-# Enable comments by entering your Disqus shortname
-disqusShortname = ""
-# Enable Google Analytics by entering your tracking code
-googleAnalytics = ""
-canonifyURLs = false
-defaultContentLanguage = "en"
-defaultContentLanguageInSubdir = false
-
-[params]
-logourl = "http://ocul.on.ca"
-style = "blue"
-email = "topomaps@scholarsportal.info"
-
-[params.social]
-github = "https://github.com/scholarsportal/historical-topos"
-email = "topomaps@scholarsportal.info"
-
-[Languages]
-[Languages.en]
-languageName = "English"
-title = "Historical Topographic Map Digitization Project"
-languageCode = "en"
-weight = 1
-logo = "img/ocul.png"
-logoalt = "Ontario Council of University Libraries"
-[[Languages.en.navlinks]]
-name = "Home"
-url = ""
-[[Languages.en.navlinks]]
-name = "About the Project"
-url = "about-project/"
-[[Languages.en.navlinks]]
-name = "About the Maps"
-url = "about-maps/"
-[[Languages.en.navlinks]]
-name = "Collection Highlights"
-url = "highlights/"
-[[Languages.en.navlinks]]
-name = "Using the Maps"
-url = "using-maps/"
-[[Languages.en.navlinks]]
-name = "Full Collection"
-url = "collection/"
-[[Languages.en.navlinks]]
-name = "FAQ"
-url = "faq/"
-[[Languages.en.navlinks]]
-name = "Contact"
-url = "contact/"
-
-[Languages.fr]
-languageName = "Français"
-title = "Projet de numérisation de la carte topographique historique"
-languageCode = "fr"
-weight = 2
-logo = "img/cbou.png"
-logoalt = "Conseil des bibliothèques universitaires de l'Ontario"
-[[Languages.fr.navlinks]]
-name = "Accueil"
-url = "fr/"
-[[Languages.fr.navlinks]]
-name = "À propos du projet"
-url = "fr/about-project/"
-[[Languages.fr.navlinks]]
-name = "Au sujet des cartes"
-url = "fr/about-maps/"
-[[Languages.fr.navlinks]]
-name = "Points saillants de la collection"
-url = "fr/highlights/"
-[[Languages.fr.navlinks]]
-name = "Utiliser les cartes"
-url = "fr/using-maps/"
-[[Languages.fr.navlinks]]
-name = "Parcourir la collection au complet"
-url = "fr/collection/"
-[[Languages.fr.navlinks]]
-name = "FAQ"
-url = "fr/faq/"
-[[Languages.fr.navlinks]]
-name = "Nous contacter"
-url = "fr/contact/"
-					</code></pre>
-					<aside class="notes">
-						Hugo can use a toml, yaml, or json file for configuration
-					</aside>
+					<h2></h2>
+					<p></p>
+					<aside class="notes"></aside>
 				</section>
 
 				<section>
-					<h2>Content creation</h2>
-					<p>Hugo content is written in Markdown, with added HTML</p>
-					<pre><code>
-+++
-date = "2017-03-16"
-title = "Using the Maps"
-+++
-
-<ul class="contents">
-	<li><a href="#finding-maps">Finding maps</a></li>
-	<li><a href="#exploring-maps">Exploring maps</a></li>
-	<li><a href="#downloading-maps">Downloading maps</a></li>
-	<li><a href="#advanced-searching">Advanced searching</a></li>
-</ul>
-
-[Scholars GeoPortal](http://geo.scholarsportal.info) is an online geoportal that allows users to find and download geospatial data and maps. Using the GeoPortal and the built-in map index navigation, users can view map availability by location, and, add maps to the map viewer to explore online. The GeoPortal also supports features to layer multiple maps, and layer other data to visualize changes over time. Maps can be downloaded for any purpose and available in GeoTIFF or JPG formats. Follow the steps below to learn more about how to access and use the collection in the GeoPortal.
-
-To search for maps directly by place name without entering the GeoPortal, go to [_Full Collection_](../collection/).
-
-## Finding Maps
-
-### Using the index
-
-The first step to accessing the historical topographic map collection is to locate and use the index navigation aid. There are two sets of historical topographic map collections available in the Scholars GeoPortal, each with their own index map for navigation, one for the 1:63,360 and 1:25,000 scale map sets. Using the index navigation, you can view map availability by selecting the area of interest found on the map.
-
-In Scholars GeoPortal, maps are available through an interactive online index display. To access the map indexes for different map scales, go directly to the Scholars GeoPortal:
-
-- [1:63 360 Index Navigation](http://geo.scholarsportal.info/#r/details/_uri@=564032357&_add:true)
-- [1:25 000 Index Navigation](http://geo.scholarsportal.info/#r/details/_uri@=847590539&_add:true)
-
-You should now be presented with the index navigation aid to select maps of interest.
-
-<img class="img-responsive using-maps" src="../img/usingmaps/Figure-3.PNG" alt="Screen capture of the 1:63,360 index map, loaded on the map viewer in the Scholars GeoPortal.">
-					</code></pre>
-					<aside class="notes">
-					If you're not familiar with Markdown, it's pretty easy to learn, and there are also online editors that you can use. You can also add in HTML when there are things you want to do that Markdown doesn't support well (e.g. adding custom css classes)
-					</aside>
+						<h2></h2>
+						<p></p>
+						<aside class="notes"></aside>
 				</section>
 
 				<section>
-					<h2>Customization</h2>
+					<h2>Other Tools &amp; Resources</h2>
 					<ul>
-						<li>We can add custom CSS or JavaScript, or override the existing templates</li>
-						<li>Templates determine the layout of the site</li>
-						<li>Hugo templates use the Go templating language</li>
-					<aside class="notes">
-						With Hugo, we'll have lots of options to customize our site. We can override the existing css and layouts to change
-					</aside>
-				</section>
-
-				<section>
-					<h2>Go templates</h2>
-					<img src="img/gotemplate.png">
-				</section>
-
-				<section>
-					<h2>Building the site</h2>
-					<p>Build the public files, then copy them to the web server</p>
-					<pre><code>
-cd topomaps
-hugo
-					</code></pre>
-					<pre><code>
-404.html
-▸ collection/
-▸ en/
-▸ img/
-▸ maps/
-▸ about-maps/
-placenames.json
-▸ faq/
-index.html
-sitemap.xml
-▸ about-project/
-▸ contact/
-▸ fr/
-index.xml
-▸ tags/
-▸ categories/
-▸ css/
-▸ highlights/
-▸ js/
-▸ using-maps/
-					</code></pre>
-					<aside class="notes">
-						Once we're happy with the website and our customizations, we build the site using the hugo command. This will generate a public folder, which has everything we need for our live site. We then put the contents of this folder onto our web server, and our site is up and running.
-					</aside>
+						<li>Netlify CMS</li>
+						<li>Web-based Markdown editors (e.g. Prose)</li>
+					</ul>
 				</section>
 
 				<section>
