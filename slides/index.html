@@ -46,7 +46,7 @@
 
 				<section>
 					<h2>Installing Hugo</h2>
-					<p><a href="https://gohugo.io/getting-started/installing/"></a>></p>
+					<p><a href="https://gohugo.io/getting-started/installing/"></a></p>
 					<aside class="notes">
 					</aside>
 				</section>
@@ -138,7 +138,7 @@
 				</section>
 
 				<section>
-					<h2>Set up uour repo</h2>
+					<h2>Set up your repo</h2>
 					<ul>
 						<li>Create a repo for your site on Github</li>
 					</ul>
@@ -146,22 +146,82 @@
 				</section>
 
 				<section>
-					<h2></h2>
-					<p></p>
+					<h2>Generate your site</h2>
+					<pre><code>hugo new site mySiteName</code></pre>
 					<aside class="notes"></aside>
 				</section>
 
 				<section>
-						<h2></h2>
+					<h2>Hugo folder structure</h2>
+					<pre><code>
+mySiteName/
+├── archetypes
+│   └── default.md
+├── config.toml
+├── content
+├── data
+├── layouts
+├── static
+└── themes
+					</code></pre>
+					<aside class="notes"></aside>
+				</section>
+
+				<section>
+						<h2>Import your theme</h2>
+						<ul>
+							<li>Themes are available on the Hugo themes site - <a href="https://themes.gohugo.io/">https://themes.gohugo.io/</a></li>
+							<li>We're going to use <a href="https://themes.gohugo.io/hugo-creative-portfolio-theme/">the Creative Portfolio theme</a></li>
+						</ul>
+						<pre><code>cd themes
+git clone https://github.com/kishaningithub/hugo-creative-portfolio-theme.git</code></pre>
 						<p></p>
 						<aside class="notes"></aside>
 				</section>
 
 				<section>
-					<h2>Other Tools &amp; Resources</h2>
+					<h2>Modify your config.toml</h2>
+					<pre><code></code></pre>
+					<aside class="notes"></aside>
+				</section>
+
+				<section>
+					<h2>Create content</h2>
+					<pre><code></code></pre>
+					<aside class="notes"></aside>
+				</section>
+
+				<section>
+					<h2>Customize your styles</h2>
+					<pre><code></code></pre>
+					<aside class="notes">Depending on what theme you use, adding custom CSS can vary. Many themes will have a custom.css file that you use to add your own, or you can change a template to include a CSS file.</aside>
+				</section>
+
+				<section>
+					<h2>Modifying templates</h2>
+					<pre><code></code></pre>
+					<aside class="notes">To override templates for an existing theme, copy the template from your themes directory into the root layouts directory. You should never edit anything in the theme directory, since that will make it harder to update and maintain over time.</aside>
+				</section>
+
+				<section>
+					<h2>Other Tools</h2>
 					<ul>
 						<li>Netlify CMS</li>
 						<li>Web-based Markdown editors (e.g. Prose)</li>
+						<li>Migration tools</li>
+					</ul>
+					<aside class="notes">
+						Netlify CMS is one example of a CMS that can be used with a static site generator in order to improve the content creation process. There are also a number of paid CMS options.
+
+						Hugo and Jekyll both have a series of migration tools to move content from WordPress, Drupal, and many other content management systems. All are available in the jekyll and hugo docs.
+					</aside>
+				</section>
+
+				<section>
+					<h2>Learn more</h2>
+					<ul>
+						<li><a href="https://programminghistorian.org/lessons/building-static-sites-with-jekyll-github-pages">Programming Historian static website tutorial</a></li>
+						<li><a href="https://www.safaribooksonline.com/library/view/working-with-static/9781491960936/">Working with Static Sites [book]</a></li>
 					</ul>
 				</section>
 
