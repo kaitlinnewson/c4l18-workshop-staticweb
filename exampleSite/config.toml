@@ -1,0 +1,50 @@
+baseurl = "https://kaitlinnewson.github.io/c4l18-workshop-staticweb/"
+title = "Good Dogs"
+theme = "hugo-creative-portfolio-theme"
+languageCode = "en-us"
+# Enable comments by entering your Disqus shortname
+disqusShortname = ""
+# Enable Google Analytics by entering your tracking code
+googleAnalytics = ""
+# for hosting on github pages, set the publishing directory to docs. I've set it to the folder above because it needs to be in the root directory.
+publishDir = "../docs"
+
+[params]
+  # Style options: default (pink), blue, green, pink, red, sea, violet
+  # Use custom.css for your custom styling
+  style = "sea"
+  description = "An example Hugo site to display a collection of images."
+  copyright = "&copy;2018 Kaitlin Newson"
+  sidebarAbout = [
+    "This is a Hugo site created for the 2018 code4lib preconference workshop on static site generators. All images were downloaded from Unsplash.com"
+  ]
+  # Contact page
+     # Since this template is static, the contact form uses www.formspree.io as a
+     # proxy. The form makes a POST request to their servers to send the actual
+     # email. Visitors can send up to a 1000 emails each month for free.
+     #
+     # What you need to do for the setup?
+     #
+     # - set your email address under 'email' below
+     # - upload the generated site to your server
+     # - send a dummy email yourself to confirm your account
+     # - click the confirm link in the email from www.formspree.io
+     # - you're done. Happy mailing!
+  email = "kaitlin@mailinator.com"
+
+  # Nav links in the side bar
+  [[params.navlinks]]
+  name = "Home"
+  url = ""
+
+  [[params.navlinks]]
+  name = "About"
+  url = "about/"
+
+  [[params.navlinks]]
+  name = "Get in touch"
+  url = "contact/"
+
+  [params.social]
+  twitter       = "https://twitter.com/kaitlinnewson"
+  github        = "https://github.com/kaitlinnewson"
