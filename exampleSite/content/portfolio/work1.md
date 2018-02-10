@@ -11,7 +11,7 @@ Doggo ipsum thicc dat tungg tho very good spot waggy wags, woofer. Aqua doggo ve
 
 <!--more-->
 
-![alt text](img/portfolio/dogs/dog1.jpg)
+![alt text](/img/portfolio/dogs/dog1.jpg)
 
 Very good spot heck clouds snoot, borkf. Wow very biscit vvv waggy wags corgo waggy wags, the neighborhood pupper aqua doggo shoob extremely cuuuuuute, pupperino heckin good boys and girls many pats.
 
