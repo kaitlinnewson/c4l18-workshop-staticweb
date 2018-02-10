@@ -8,6 +8,7 @@ disqusShortname = ""
 googleAnalytics = ""
 # for hosting on github pages, set the publishing directory to docs. I've set it to the folder above because it needs to be in the root directory.
 publishDir = "../docs"
+canonifyurls = true
 
 [params]
   # Style options: default (pink), blue, green, pink, red, sea, violet
