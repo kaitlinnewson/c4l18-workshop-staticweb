@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Static Site Generators workshop, Code4Lib 2018</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/black.css">
@@ -26,8 +26,8 @@
 			<div class="slides">
 				<section>
 					<h2>Getting Started with Static Website Generators</h2>
-					<p>Kaitlin Newson (@kaitlinnewson), Digital Projects Librarian, Scholars Portal</p>
-					<p>Kim Pham (@tolloid), Digital Projects Librarian, University of Toronto Scarborough</p>
+					<p>Kaitlin Newson (<a href="https://twitter.com/kaitlinnewson">@kaitlinnewson</a>), Digital Projects Librarian, Scholars Portal</p>
+					<p>Kim Pham (<a href="https://twitter.com/tolloid">@tolloid</a>), Digital Projects Librarian, University of Toronto Scarborough</p>
 					<p>Slides: <a href="">link</a></p>
 					<p>Git repo: <a href="https://git.io/vALv2">git.io/vALv2</a></p>
 				</section>
@@ -138,6 +138,70 @@
 				</section>
 
 				<section>
+						<h2>Hugo folder structure</h2>
+						<pre><code>
+	mySiteName/
+	├── archetypes
+	│   └── default.md
+	├── config.toml
+	├── content
+	├── data
+	├── layouts
+	├── static
+	└── themes
+						</code></pre>
+						<aside class="notes"></aside>
+					</section>
+
+					<section>
+						<h2>Archetypes</h2>
+						<p>Allow for the quick generation of a content type into a markdown file, such as a blog post</p>
+					</section>
+
+					<section>
+						<h2>Config.toml</h2>
+						<p>Defines site settings, like the url, language, meta information, which theme to use, etc.</p>
+						<p>Can be formatted at toml, yaml, or json.</p>
+						<pre>
+							<code>
+	baseURL = "http://example.org/"
+	languageCode = "en-us"
+	title = "My New Hugo Site"
+	theme = ""
+							</code>
+						</pre>
+					</section>
+
+					<section>
+						<h2>Data</h2>
+						<p>Data used in the website, usually formatted as yaml or json.</p>
+						<aside class="notes">For example, in the code4lib conference site the lists of speakers and locations are stored in this folder in yaml files.</aside>
+					</section>
+
+					<section>
+						<h2>Layouts</h2>
+						<p>Templates for how different parts of the site will be rendered.</p>
+						<p>Can use logic, if statements, loops, variable comparisons, mathematical operators.</p>
+						<p> Use dot notation, e.g. .Params references params set in the config file</p>
+						<pre>
+							<code>
+	{{ if isset .Params "title" }}<h4>{{ index .Params "title" }}</h4>{{ end }}
+							</code>
+						</pre>
+					</section>
+
+					<section>
+						<h2>Static</h2>
+						<p>Any static assets, like images, CSS, or JavaScript</p>
+						<p>When Hugo builds the site, content in this directory is copied over as-is.</p>
+					</section>
+
+					<section>
+						<h2>Themes</h2>
+						<p>Site themes</p>
+					</section>
+
+				<section>
 					<h2>Creating a static site hosted with Github Pages</h2>
 				</section>
 
@@ -145,69 +209,6 @@
 					<h2>Generate your site</h2>
 					<pre><code>hugo new site mySiteName</code></pre>
 					<aside class="notes"></aside>
-				</section>
-
-				<section>
-					<h2>Hugo folder structure</h2>
-					<pre><code>
-mySiteName/
-├── archetypes
-│   └── default.md
-├── config.toml
-├── content
-├── data
-├── layouts
-├── static
-└── themes
-					</code></pre>
-					<aside class="notes"></aside>
-				</section>
-
-				<section>
-					<h2>Archetypes</h2>
-					<p>Allow for the quick generation of a content type into a markdown file, such as a blog post</p>
-				</section>
-
-				<section>
-					<h2>Config.toml</h2>
-					<p>Defines site settings, like the url, language, meta information, which theme to use, etc.</p>
-					<p>Can be formatted at toml, yaml, or json.</p>
-					<pre>
-						<code>
-baseURL = "http://example.org/"
-languageCode = "en-us"
-title = "My New Hugo Site"
-theme = ""
-						</code>
-					</pre>
-				</section>
-
-				<section>
-					<h2>Data</h2>
-					<p>Data used in the website, usually formatted as yaml or json.</p>
-					<aside class="notes">For example, in the code4lib conference site the lists of speakers and locations are stored in this folder in yaml files.</aside>
-				</section>
-
-				<section>
-					<h2>Layouts</h2>
-					<p>Templates for how different parts of the site will be rendered.</p>
-					<p>Can use logic, if statements, loops, variable comparisons, mathematical operators.</p>
-					<p> Use dot notation, e.g. .Params references params set in the config file</p>
-					<pre>
-						<code>
-{{ if isset .Params "title" }}<h4>{{ index .Params "title" }}</h4>{{ end }}
-						</code>
-					</pre>
-				</section>
-
-				<section>
-					<h2>Static</h2>
-					<p>Any static assets, like images, CSS, or JavaScript</p>
-				</section>
-
-				<section>
-					<h2>Themes</h2>
-					<p>Site themes</p>
 				</section>
 
 				<section>
