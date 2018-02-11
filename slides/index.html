@@ -142,14 +142,6 @@
 				</section>
 
 				<section>
-					<h2>Set up your repo</h2>
-					<ul>
-						<li>Create a repo for your site on Github</li>
-					</ul>
-					<aside class="notes">This is optional - if you don't want to publish your site on Github pages, you can skip this</aside>
-				</section>
-
-				<section>
 					<h2>Generate your site</h2>
 					<pre><code>hugo new site mySiteName</code></pre>
 					<aside class="notes"></aside>
@@ -173,20 +165,39 @@ mySiteName/
 
 				<section>
 					<h2>Archetypes</h2>
+					<p>Allow for the quick generation of a content type into a markdown file, such as a blog post</p>
 				</section>
 
 				<section>
 					<h2>Config.toml</h2>
 					<p>Defines site settings, like the url, language, meta information, which theme to use, etc.</p>
+					<p>Can be formatted at toml, yaml, or json.</p>
+					<pre>
+						<code>
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "My New Hugo Site"
+theme = ""
+						</code>
+					</pre>
 				</section>
 
 				<section>
 					<h2>Data</h2>
+					<p>Data used in the website, usually formatted as yaml or json.</p>
+					<aside class="notes">For example, in the code4lib conference site the lists of speakers and locations are stored in this folder in yaml files.</aside>
 				</section>
 
 				<section>
 					<h2>Layouts</h2>
-					<p></p>
+					<p>Templates for how different parts of the site will be rendered.</p>
+					<p>Can use logic, if statements, loops, variable comparisons, mathematical operators.</p>
+					<p> Use dot notation, e.g. .Params references params set in the config file</p>
+					<pre>
+						<code>
+{{ if isset .Params "title" }}<h4>{{ index .Params "title" }}</h4>{{ end }}
+						</code>
+					</pre>
 				</section>
 
 				<section>
@@ -200,14 +211,14 @@ mySiteName/
 				</section>
 
 				<section>
-						<h2>Import your theme</h2>
+						<h2>Adding a theme</h2>
 						<ul>
 							<li>Themes are available on the Hugo themes site - <a href="https://themes.gohugo.io/">https://themes.gohugo.io/</a></li>
 							<li>We're going to use <a href="https://themes.gohugo.io/hugo-creative-portfolio-theme/">the Creative Portfolio theme</a></li>
 						</ul>
 						<pre><code>cd themes
 git clone https://github.com/kishaningithub/hugo-creative-portfolio-theme.git</code></pre>
-						<p></p>
+						<p>Remove the .git folder in the theme directory</p>
 						<aside class="notes"></aside>
 				</section>
 
@@ -258,12 +269,11 @@ git clone https://github.com/kishaningithub/hugo-creative-portfolio-theme.git</c
 				<section>
 					<h2>Other Tools</h2>
 					<ul>
-						<li>Netlify CMS</li>
-						<li>Web-based Markdown editors (e.g. Prose)</li>
+						<li>Netlify CMS (<a href="https://www.netlifycms.org/"></a>https://www.netlifycms.org/)</li>
 						<li>Migration tools</li>
 					</ul>
 					<aside class="notes">
-						Netlify CMS is one example of a CMS that can be used with a static site generator in order to improve the content creation process. There are also a number of paid CMS options.
+						Netlify CMS is one example of a CMS that can be used with a static site generator in order to improve the content creation process. There are also a number of paid CMS options (e.g. Forestry).
 
 						Hugo and Jekyll both have a series of migration tools to move content from WordPress, Drupal, and many other content management systems. All are available in the jekyll and hugo docs.
 					</aside>
