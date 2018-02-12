@@ -9,7 +9,7 @@ The 'docs' directory hosts the built Hugo website from the 'exampleSite' directo
 * 7 exercises in 45 minutes, about 5 minutes per exercise but it's really go at your own pace
 * Instead of going through together a se of instructions of things you can do with Hugo, we're going to take a less traditional format of independent learning, the same way that you might have to figure out a new technology on your own time, but benefitting from other people around to help you
 * We'll provide minimal written/verbal instruction. We encourage you to read the Hugo documentation and google/duckduckgo for help!
-* If you have questions, ask your neighbour. [Coding learning is social](https://andromedayelton.com/2013/11/25/reflecting-on-introduction-to-python-for-librarians/). If there's still any remaining questions, put up a stickie and one of us will come and help out
+* If you have questions, ask your neighbour. [Code learning is social](https://andromedayelton.com/2013/11/25/reflecting-on-introduction-to-python-for-librarians/). If there's still any remaining questions, put up a stickie and one of us will come and help out
 * We're going to take up the exercises after 10, 20, and 45 minutes.
 * When we take up the exercises, We're going to ask you:
    * Show us how you worked through the problem. What resources did you consult?
@@ -18,11 +18,15 @@ The 'docs' directory hosts the built Hugo website from the 'exampleSite' directo
 
 #### Exercise 1
 
-Basic Usage - Creating Content 
+Basic Usage - Creating Content
+
+Although Hugo doesn't have a GUI to manage and edit content, it's not only designed for developers to use. The use of readable standards like Markdown, the templates and content organization layouts make it a little easier for content managers and authors to use.
+
+The first exercise is to go through a typical authoring and publishing workflow.
 
 * Add a new Portfolio page
-* Your new Portfolio should have an image on the homepage
-* The Portfolio page should be called Dog 7
+* Your new Portfolio should appear on the homepage and include an image
+* The Portfolio page should be called 'Dog 7'
 * Create the page as a draft
 * View the page as a draft
 * Then, publish it and view it again
@@ -31,7 +35,8 @@ Basic Usage - Creating Content
 
 Archetypes
 
-* Create and edit the Archetype for Portfolio. Archetypes are files located in the archetypes directory of your project. These files correspond to your website’s content types. It is here that you would put in the front matter variables for your content types. Archetypes facilitate consistent metadata across your website content and allow content authors to quickly generate instances of a content type via the hugo new command.
+* Create and edit the Archetype for Portfolio so that everytime you create a new Portfolio page, the front matter (aka page metadata) looks like the front matter found in content/portfolio/work1.md.
+* Archetypes are files located in the archetypes/ directory of your project. Hugo recognizes that the files in this directory correspond to your website’s content types based on their filename. It is here that you would put in the front matter variables for your content types. Archetypes facilitate consistent metadata across your website content and allow content authors to quickly generate instances of a content type via the hugo new command.
 * If you want to keep working with Archetypes, add another Archetype for Testimonials, create a new Testimonial and view the page.
 
 10 minute mark: Take up 1, 2
@@ -40,24 +45,27 @@ Archetypes
 
 List Page Templates
 
-* Create a list page for your Portfolio pages if you were to go to http://localhost:1313/c4l18-test-exercises/portfolio/.
-* This page should provide a link to every Portfolio page
-* Anytime a new Portfolio page is created it will appear there.
-* Create an index page (_index.md) for your Portfolio content type which will appear in your Portfolio list page.
+A list page template is a template used to render multiple pieces of content in a single HTML page. You can create a list page for your different content types, and provides support for taxonomies, sections, and also RSS. List pages have associated content files, which Hugo recognizes as the _index.md file in your content type directory.
+
+* Create a list page for your Portfolio pages if you were to go to http://localhost:1313/c4l18-test-exercises/portfolio/. It will be helpful to look at the existing templates that the theme provides and use one of those.
+* Your list page should provide a link to every Portfolio page
+* Anytime a new Portfolio page is created it will appear there
+* Create an index page (_index.md) for your Portfolio content type, which will appear in your Portfolio list page.
+
 
 #### Exercise 4
 
 List Page Templates - Summary Page
 
-* Create summaries for your lists instead
+* Create summaries for your lists instead of the list of dates.
 
-20 minute mark: Take up 3, 4
+20ish minute mark: Take up 3, 4
 
 #### Exercise 5
 
 Shortcodes
 
-Shortcodes are simple snippets inside your content files calling built-in or custom templates. You can use them to embed media and other external popular types of content. They're designed to be simple and reusable, without having to repeatedly put in messy html into your markdown files. 
+Shortcodes are simple snippets inside your content files calling built-in or custom templates. You can use them to embed media and other external popular types of content. They're designed to be simple and reusable, without having to repeatedly put in messy html into your markdown files.
 
 Embed one of the following sources into a new Portfolio page using shortcodes:
 
@@ -77,18 +85,21 @@ Play around with the styling of the site. Try and do the following:
 
 #### Exercise 7
 
-Custom CSS - overriding existing fonts with web fonts 
+Custom CSS - overriding existing fonts with web fonts
 
 Grab a couple of fonts from [Google Fonts](https://fonts.google.com/) and use them to override the fonts on your website. You'll want to edit just the title and body of each dog portfolio post.
 
-#### Exercise 7
+#### Exercise 8
 
-Image Metadata
-Page Resource
-Contact email integration
-Create a new page where you get all image resources
+Here are a few other ideas for you to try out:
 
-45 minute mark: Take up 5, 6, 7
+* Image Processing
+* Image Metadata
+* Page Resource
+* Contact email integration
+* Create a new page where you get all image resources
+
+40-45 minute mark: Take up 5, 6, 7, show and tell other things people did
 
 -----------------------------
 
@@ -96,9 +107,10 @@ Create a new page where you get all image resources
 
 #### Exercise 1
 
-* Find a new image and put it in static/img/dogs/
+* Find a new dog image and put it in static/img/dogs/
 * You can just create a new .md file and copy over the front matter but you could also use the hugo CLI, hugo new portfolio/work7.md. Note that the metadata is not the same. That's because you haven't specified the archetype.
 * Check out https://gohugo.io/commands/hugo_server/ or hugo help
+* Check out https://gohugo.io/getting-started/quick-start/
 
 #### Exercise 2
 
@@ -112,17 +124,17 @@ While Hugo supports content nested at any level, the top levels (i.e. content/<D
 
 #### Exercise 3
 
-* https://gohugo.io/templates/base/
-* https://gohugo.io/templates/lists/
-* https://gohugo.io/content-management/organization/
+* Background information about base templates: https://gohugo.io/templates/base/
+* More information about list pages, with good code samples that you can use: https://gohugo.io/templates/lists/
+* Background information about how content (such as the _index.md index page) is orgaized: https://gohugo.io/content-management/organization/
 
 #### Exercise 4
 
-* https://gohugo.io/content-management/shortcodes/
+* You can use the code samples found here: https://gohugo.io/content-management/shortcodes/
 
 #### Exercise 5
 
-* If you look at the theme README (https://github.com/kishaningithub/hugo-creative-portfolio-theme), this theme provides a style option and the ability to customize your css using a custom.css file. 
+* If you look at the theme README (https://github.com/kishaningithub/hugo-creative-portfolio-theme), this theme provides a style option and the ability to customize your css using a custom.css file.
 * Read https://gohugo.io/themes/customizing/.  Under static/css there is a custom.css file that you can use to override css template files.
 
 #### Exercise 6
