@@ -7,7 +7,7 @@
 		<title>Static Site Generators workshop, Code4Lib 2018</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/theme/white.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -81,6 +81,18 @@
 				</section>
 
 				<section>
+					<h2>Examples</h2>
+					<p>Historical Topographic Map Digitization site 
+					<a href="https://ocul.on.ca/topomaps">https://ocul.on.ca/topomaps</a></p>
+					<img src="img/topomaps.png" alt="Screenshot of the topographic maps website">
+				</section>
+
+				<section>
+					<p>Archives Unleashed<br> <a href="http://archivesunleashed.org/">http://archivesunleashed.org/</a></p>
+					<img src="img/archivesunleashed.png" alt="Screenshot of the archives unleashed website">
+				</section>
+
+				<section>
 					<h2>Benefits</h2>
 					<ul>
 						<li>Performance &amp; speed</li>
@@ -88,7 +100,7 @@
 						<li>Less resource intensive</li>
 						<li>Security benefits</li>
 						<li>Version control</li>
-						<li>Simple hosting, e.g. Github pages</li>
+						<li>Simple hosting options, e.g. Github pages</li>
 					</ul>
 				</section>
 
@@ -256,7 +268,7 @@ Today we’ll be learning about Markdown syntax. This sentence is separated by a
 				<section>
 					<h2>Why Hugo?</h2>
 					<ul>
-						<li>Speed</li>
+						<li>Speed (&lt;1 millisecond/page)</li>
 						<li>Less dependencies</li>
 						<li>Built-in multilingual functionality</li>
 						<li>Integrations (Google analytics, formspree, disqus)</li>
@@ -291,6 +303,10 @@ Today we’ll be learning about Markdown syntax. This sentence is separated by a
 					<section>
 						<h2>Archetypes</h2>
 						<p>Allow for the quick generation of a content type into a markdown file, such as a blog post</p>
+						<pre><code>
+hugo new SECTIONNAME/FILENAME.FORMAT
+hugo new post/2018-01-01.md
+						</code></pre>
 					</section>
 
 					<section>
@@ -315,9 +331,11 @@ Today we’ll be learning about Markdown syntax. This sentence is separated by a
 
 					<section>
 						<h2>Layouts</h2>
-						<p>Templates for how different parts of the site will be rendered.</p>
-						<p>Can use logic, if statements, loops, variable comparisons, mathematical operators.</p>
-						<p> Use dot notation, e.g. .Params references params set in the config file</p>
+						<ul>
+							<li>Templates for how different parts of the site will be rendered.</li>
+							<li>Can use logic, if statements, loops, variable comparisons, mathematical operators.</li>
+							<li>Use dot notation, e.g. .Params references params set in the config file</li>
+						</ul>
 						<pre>
 							<code>
 	{{ if isset .Params "title" }}<h4>{{ index .Params "title" }}</h4>{{ end }}
@@ -405,7 +423,7 @@ git clone https://github.com/kishaningithub/hugo-creative-portfolio-theme.git</c
 				<section>
 					<h2>Other Tools</h2>
 					<ul>
-						<li>Netlify CMS (<a href="https://www.netlifycms.org/"></a>https://www.netlifycms.org/)</li>
+						<li>Netlify CMS (<a href="https://www.netlifycms.org/">https://www.netlifycms.org/</a>)</li>
 						<li>Migration tools</li>
 					</ul>
 					<aside class="notes">
@@ -424,7 +442,7 @@ git clone https://github.com/kishaningithub/hugo-creative-portfolio-theme.git</c
 				</section>
 
 				<section>
-					<h2>Questions?</h2>
+					<h2>Get in touch</h2>
 					<ul>
 						<li><a href="https://twitter.com/kaitlinnewson">@kaitlinnewson</a>, <a href="mailto:kaitlin@scholarsportal.info">kaitlin@scholarsportal.info</a></li>
 						<li><a href="https://twitter.com/tolloid">@tolloid</a>, <a href="mailto:kim.pham@utoronto.ca">kim.pham@utoronto.ca</a></li>
