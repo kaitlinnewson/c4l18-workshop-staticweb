@@ -28,7 +28,6 @@
 					<h2>Getting Started with Static Website Generators</h2>
 					<p>Kaitlin Newson (<a href="https://twitter.com/kaitlinnewson">@kaitlinnewson</a>), Digital Projects Librarian, Scholars Portal</p>
 					<p>Kim Pham (<a href="https://twitter.com/tolloid">@tolloid</a>), Digital Projects Librarian, University of Toronto Scarborough</p>
-					<p>Slides: <a href="">link</a></p>
 					<p>Git repo: <a href="https://git.io/vALv2">git.io/vALv2</a></p>
 				</section>
 
@@ -73,7 +72,7 @@
 							<li>Compiles into HTML/CSS files</li>
 							<li>Built-in server for testing</li>
 							<li>Many options - over 200 options on <a href="https://www.staticgen.com/">staticgen.com</a></li>
-							<li>Most popular is Jekyll (built in Ruby)</li>
+							<li>Most popular is Jekyll (built with Ruby), followed by Hugo (built with Go)</li>
 						</ul>
 						<aside class="notes">
 							The website staticgen.com, which tracks static site generators, currently has over 200 (210) listed.
@@ -82,8 +81,11 @@
 
 				<section>
 					<h2>Examples</h2>
-					<p>Historical Topographic Map Digitization site 
-					<a href="https://ocul.on.ca/topomaps">https://ocul.on.ca/topomaps</a></p>
+					<p>Code4Lib Conference site</p>
+				</section>
+
+				<section>
+					<p>Historical Topographic Map Digitization project <a href="https://ocul.on.ca/topomaps">https://ocul.on.ca/topomaps</a></p>
 					<img src="img/topomaps.png" alt="Screenshot of the topographic maps website">
 				</section>
 
@@ -274,7 +276,7 @@ Today we’ll be learning about Markdown syntax. This sentence is separated by a
 						<li>Integrations (Google analytics, formspree, disqus)</li>
 					</ul>
 					<aside class="notes">
-						So because there are lots of options, you might be wondering why I use Hugo, especially when Jekyll is the most popular. I like Hugo for a few reasons. For one, it's really fast to build the site, at less than 1 millisecond per page. This is especially nice when you're working on a bigger project.
+						So because there are lots of options, you might be wondering why I use Hugo when Jekyll is the most common. I like Hugo for a few reasons. For one, it's really fast to build the site, at less than 1 millisecond per page. This is especially nice when you're working on a bigger project with a lot of files.
 
 						I also like that I didn't have to install or worry about any dependencies. With some of the site generators I looked at, there were a lot of other things that needed to be installed, which I didn't have to worry about with Hugo.
 
@@ -356,11 +358,21 @@ hugo new post/2018-01-01.md
 
 				<section>
 					<h2>Creating a static site hosted with Github Pages</h2>
+					<p>Follow along, and put up a blue sticky note if you get stuck</p>
 				</section>
 
 				<section>
-					<h2>Generate your site</h2>
-					<pre><code>hugo new site mySiteName</code></pre>
+					<h2>Generate your site &amp; connect it to your git repo</h2>
+					<pre><code>
+hugo new site mySiteName
+cd mySiteName
+git init
+git remote add origin https://github.com/username/repo-name.git
+git add .
+git commit -m "initial commit"
+git push -u origin master
+					</code></pre>
+					<p>Go to your repo on github, and you should see a couple of items have been added</p>
 					<aside class="notes"></aside>
 				</section>
 
@@ -370,52 +382,77 @@ hugo new post/2018-01-01.md
 							<li>Themes are available on the Hugo themes site at <a href="https://themes.gohugo.io/">https://themes.gohugo.io/</a></li>
 							<li>We're going to use <a href="https://themes.gohugo.io/hugo-creative-portfolio-theme/">the Creative Portfolio theme</a></li>
 						</ul>
-						<pre><code>cd themes
-git clone https://github.com/kishaningithub/hugo-creative-portfolio-theme.git</code></pre>
+						<pre><code>
+cd themes
+git clone https://github.com/kishaningithub/hugo-creative-portfolio-theme.git
+						</code></pre>
 						<p>Remove the .git folder in the theme directory so you can push it to Github later</p>
 						<aside class="notes"></aside>
 				</section>
 
 				<section>
+					<h2>Copy the theme's example site</h2>
+					<pre><code>
+cd .. (to your site root directory)
+cp -r themes/hugo-creative-portfolio-theme/exampleSite/* .
+					</code></pre>
+				</section>
+
+				<section>
+						<h2>See your site</h2>
+						<pre><code>
+	hugo serve
+						</code></pre>
+						<p>Go to localhost:1313 in your web browser</p>
+					</section>
+
+				<section>
 					<h2>Modify your config.toml</h2>
-					<pre><code></code></pre>
-					<aside class="notes"></aside>
+					<p>Add this line for Github pages hosting: <br><code>publishDir = "docs"</code></p>
+					<p>Set your baseurl to: <br>https://<em>githubUsername</em>.github.io/<em>repo-name</em>/</p>
+					<p>add your social media links under <code>params.social</code>, and remove any empty ones</p>
+				</section>
+
+				<section>
+					<h2>Get some images for the site</h2>
+					<p>Options are available in the github repo under 'sampleImages', or you can use your own</p>
 				</section>
 
 				<section>
 					<h2>Create content</h2>
-					<pre><code></code></pre>
+					<p>In your 'content/portfolio' directory, create a markdown file to correspond with each image </p>
+				</section>
+
+				<section>
+					<h2>Push to Github pages</h2>
+					<pre><code>
+hugo
+git add .
+git commit -m "build the site"
+git push
+					</code></pre>
 					<aside class="notes"></aside>
 				</section>
 
 				<section>
-					<h2>Customize your styles</h2>
-					<pre><code></code></pre>
-					<aside class="notes">Depending on what theme you use, adding custom CSS can vary. Many themes will have a custom.css file that you use to add your own, or you can change a template to include a CSS file.</aside>
-				</section>
+						<h2>Customizing styles</h2>
+						<p>Depending on the theme, customizing the theme can vary - check the theme documentation.</p>
+						<p>For this theme, create a CSS file at <br><code>mySiteName/static/css/custom.css</code></p>
+						<aside class="notes">Depending on what theme you use, methods for adding custom CSS can vary. Many themes will have a custom.css file that you use to add your own, or you can change a template to include a CSS file.</aside>
+					</section>
 
-				<section>
-					<h2>Modifying templates</h2>
-					<ul>
-						<li>Modify the template so the image of the item appears on the page for the item</li>
-					</ul>
-					<pre><code></code></pre>
-					<aside class="notes">To override templates for an existing theme, copy the template from your themes directory into the root layouts directory. You should never edit anything in the theme directory, since that will make it harder to update and maintain over time.</aside>
-				</section>
-
-				<section>
-					<h2>Github pages setup</h2>
-					<ul>
-						<li></li>
-					</ul>
-					<pre><code></code></pre>
-					<aside class="notes"></aside>
-				</section>
+					<section>
+						<h2>Modifying templates</h2>
+						<ul>
+							<li>When you override a template, copy the structure from the themes directory into your root directory.</li>
+						</ul>
+						<aside class="notes">To override templates for an existing theme, copy the template from your themes directory into the root layouts directory. You should never edit anything in the theme directory, since that will make it harder to update and maintain over time.</aside>
+					</section>
 
 				<section>
 					<h2>Exercises</h2>
 					<ul>
-						<li>Link: <a href=""></a></li>
+						<li>See the README at <a href="https://git.io/vALv2">https://git.io/vALv2</a></li>
 					</ul>
 					<aside class="notes"></aside>
 				</section>
@@ -444,8 +481,8 @@ git clone https://github.com/kishaningithub/hugo-creative-portfolio-theme.git</c
 				<section>
 					<h2>Get in touch</h2>
 					<ul>
-						<li><a href="https://twitter.com/kaitlinnewson">@kaitlinnewson</a>, <a href="mailto:kaitlin@scholarsportal.info">kaitlin@scholarsportal.info</a></li>
-						<li><a href="https://twitter.com/tolloid">@tolloid</a>, <a href="mailto:kim.pham@utoronto.ca">kim.pham@utoronto.ca</a></li>
+						<p><a href="https://twitter.com/kaitlinnewson">@kaitlinnewson</a>, <a href="mailto:kaitlin@scholarsportal.info">kaitlin@scholarsportal.info</a></p>
+						<p><a href="https://twitter.com/tolloid">@tolloid</a>, <a href="mailto:kim.pham@utoronto.ca">kim.pham@utoronto.ca</a></p>
 					</ul>
 				</section>
 			</div>
