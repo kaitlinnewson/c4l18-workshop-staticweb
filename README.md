@@ -6,10 +6,11 @@ The 'docs' directory hosts the built Hugo website from the 'exampleSite' directo
 
 ### Hugo Exercises
 
+* **If you get stuck**, put up a blue sticky note. **When you finish a set of exercises**, put up a yellow sticky note.
 * 7 exercises in 45 minutes, about 5 minutes per exercise but it's really go at your own pace
 * Instead of going through together a se of instructions of things you can do with Hugo, we're going to take a less traditional format of independent learning, the same way that you might have to figure out a new technology on your own time, but benefitting from other people around to help you
 * We'll provide minimal written/verbal instruction. We encourage you to read the Hugo documentation and google/duckduckgo for help!
-* If you have questions, ask your neighbour. [Code learning is social](https://andromedayelton.com/2013/11/25/reflecting-on-introduction-to-python-for-librarians/). If there's still any remaining questions, put up a stickie and one of us will come and help out
+* If you have questions, ask your neighbour. [Code learning is social](https://andromedayelton.com/2013/11/25/reflecting-on-introduction-to-python-for-librarians/). If there's still any remaining questions, put up a blue stickie and one of us will come and help out
 * We're going to take up the exercises after 10, 20, and 45 minutes.
 * When we take up the exercises, We're going to ask you:
    * Show us how you worked through the problem. What resources did you consult?
@@ -39,6 +40,8 @@ Archetypes
 * Archetypes are files located in the archetypes/ directory of your project. Hugo recognizes that the files in this directory correspond to your website’s content types based on their filename. It is here that you would put in the front matter variables for your content types. Archetypes facilitate consistent metadata across your website content and allow content authors to quickly generate instances of a content type via the hugo new command.
 * If you want to keep working with Archetypes, add another Archetype for Testimonials, create a new Testimonial and view the page.
 
+Put up a yellow sticky note when you finish 1 & 2.
+
 10 minute mark: Take up 1, 2
 
 #### Exercise 3
@@ -58,6 +61,9 @@ A list page template is a template used to render multiple pieces of content in 
 List Page Templates - Summary Page
 
 * Create summaries for your lists instead of the list of dates.
+
+
+Put up a yellow sticky note when you finish 3 & 4.
 
 20ish minute mark: Take up 3, 4
 
@@ -98,6 +104,9 @@ Here are a few other ideas for you to try out:
 * Page Resource
 * Contact email integration
 * Create a new page where you get all image resources
+
+
+Put up a yellow sticky note when you finish 4-7.
 
 40-45 minute mark: Take up 5, 6, 7, show and tell other things people did
 
