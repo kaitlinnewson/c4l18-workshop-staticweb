@@ -39,6 +39,7 @@
 						<li>Markdown</li>
 						<li>Hugo directory structure</li>
 						<li>Create a starter site</li>
+						<li>Break</li>
 						<li>Exercises</li>
 						<li>Other useful tools</li>
 						<li>Discussion</li>
@@ -144,7 +145,7 @@
 				<section>
 					<h2>Benefits</h2>
 					<ul>
-						<li>Readble</li>
+						<li>Readable</li>
 						<li>Durable</li>
 						<li>Legible, easy to understand</li>
 						<li>Supported on various content management applications</li>
@@ -363,6 +364,7 @@ hugo new post/2018-01-01.md
 
 				<section>
 					<h2>Generate your site &amp; connect it to your git repo</h2>
+					<p>Create your repository on github and copy the link</p>
 					<pre><code>
 hugo new site mySiteName
 cd mySiteName
@@ -415,18 +417,19 @@ cp -r themes/hugo-creative-portfolio-theme/exampleSite/* .
 
 				<section>
 					<h2>Get some images for the site</h2>
-					<p>Options are available in the github repo under 'sampleImages', or you can use your own</p>
-					<p>Copy images to mySiteName/static/img/portfolio</p>
+					<p>Options are available in the github repo under 'sampleImages'</p>
+					<p>Copy the images folder to mySiteName/static/img/portfolio</p>
 				</section>
 
 				<section>
 					<h2>Create content</h2>
-					<p>In your 'content/portfolio' directory, copy the files in the git repo at exampleSite/content/portfolio/</p>
+					<p>In your 'content/portfolio' directory, copy the markdown files in the git repo at exampleSite/content/portfolio/</p>
 					<p>Update the markdown files if you're not using the dog images</p>
 				</section>
 
 				<section>
 					<h2>Push to Github pages</h2>
+					<p>Press CTRL+C to stop the hugo server</p>
 					<pre><code>
 hugo
 git add .
@@ -445,9 +448,7 @@ git push
 
 					<section>
 						<h2>Modifying templates</h2>
-						<ul>
-							<li>When you override a template, copy the structure from the themes directory into your root directory.</li>
-						</ul>
+						<p>When you override a template, copy the structure from the themes directory into your root directory.</p>
 						<aside class="notes">To override templates for an existing theme, copy the template from your themes directory into the root layouts directory. You should never edit anything in the theme directory, since that will make it harder to update and maintain over time.</aside>
 					</section>
 
