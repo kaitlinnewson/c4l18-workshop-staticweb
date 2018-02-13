@@ -206,7 +206,7 @@ Today we’ll be learning about Markdown syntax. This sentence is separated by a
 		<h3>Markdown and Github</h3>
 		<ul>
 			<li>Markdown is used in many places in Github</li>
-			<li>Github has its own Markdown syntax, called Github Flavoured Markdown</li>
+			<li>Github has its own Markdown syntax, called Github Flavoured Markdown - <a href="https://github.github.com/gfm/">https://github.github.com/gfm/</a></li>
 			<li>Dillinger is also integrated with Github</li>
 		</ul>
 	</section>
@@ -307,6 +307,13 @@ Today we’ll be learning about Markdown syntax. This sentence is separated by a
 						<h2>Archetypes</h2>
 						<p>Allow for the quick generation of a content type into a markdown file, such as a blog post</p>
 						<pre><code>
+---
+title: "{{ replace .Name "-" " " | title }}"
+date: {{ .Date }}
+draft: true
+---
+						</code></pre>
+						<pre><code>
 hugo new SECTIONNAME/FILENAME.FORMAT
 hugo new post/2018-01-01.md
 						</code></pre>
@@ -348,7 +355,7 @@ hugo new post/2018-01-01.md
 
 					<section>
 						<h2>Static</h2>
-						<p>Any static assets, like images, CSS, or JavaScript</p>
+						<p>Contains any static assets, like images, CSS, or JavaScript.</p>
 						<p>When Hugo builds the site, content in this directory is copied over as-is.</p>
 					</section>
 
@@ -359,7 +366,8 @@ hugo new post/2018-01-01.md
 
 				<section>
 					<h2>Creating a static site hosted with Github Pages</h2>
-					<p>Follow along, and put up a blue sticky note if you get stuck</p>
+					<p>Follow along, and put up a blue sticky note if you get stuck.</p>
+					<p>We'll use this site for the exercises.</p>
 				</section>
 
 				<section>
@@ -412,7 +420,7 @@ cp -r themes/hugo-creative-portfolio-theme/exampleSite/* .
 					<h2>Modify your config.toml</h2>
 					<p>Add this line for Github pages hosting: <br><code>publishDir = "docs"</code></p>
 					<p>Set your baseurl to: <br>https://<em>githubUsername</em>.github.io/<em>repo-name</em>/</p>
-					<p>add your social media links under <code>params.social</code>, and remove any empty ones</p>
+					<p>Add your social media links under <code>params.social</code>, and remove any empty ones</p>
 				</section>
 
 				<section>
@@ -454,9 +462,7 @@ git push
 
 				<section>
 					<h2>Exercises</h2>
-					<ul>
-						<li>See the README at <a href="https://git.io/vALv2">https://git.io/vALv2</a></li>
-					</ul>
+					<p>See the README at <a href="https://git.io/vALv2">https://git.io/vALv2</a></p>
 					<aside class="notes"></aside>
 				</section>
 
