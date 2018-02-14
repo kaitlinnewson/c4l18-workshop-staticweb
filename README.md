@@ -1,6 +1,6 @@
 ## Code4Lib 2018 Workshop: Getting Started with Static Website Generators
 
-Slides and other materials for the "Getting Started with Static Website Generators" preconference workshop at code4lib 2018. [See the conference page for more details](http://2018.code4lib.org/workshops/getting-started-with-static-website-generators).
+Slides and other materials for the "Getting Started with Static Website Generators" preconference workshop at code4lib 2018. [See the conference page for more details](http://2018.code4lib.org/workshops/getting-started-with-static-website-generators). Created by [Kaitlin Newson](https://github.com/kaitlinnewson) and [Kim Pham](https://github.com/kimpham54).
 
 [You can view the slides with rawgit](https://cdn.rawgit.com/kaitlinnewson/c4l18-workshop-staticweb/e9e227c2/slides/index.html).
 
