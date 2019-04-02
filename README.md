@@ -9,20 +9,20 @@ The 'docs' directory hosts the built Hugo website from the 'exampleSite' directo
 ### Hugo Exercises
 
 * 7 exercises in 45 minutes, about 5 minutes per exercise but it's really go at your own pace
-* Instead of going through together a se of instructions of things you can do with Hugo, we're going to take a less traditional format of independent learning, the same way that you might have to figure out a new technology on your own time, but benefitting from other people around to help you
+* Instead of going through together a set of instructions of things you can do with Hugo, we're going to take a less traditional format of independent learning, the same way that you might have to figure out a new technology on your own time, but benefitting from other people around to help you
 * We'll provide minimal written/verbal instruction. We encourage you to read the Hugo documentation and google/duckduckgo for help!
-* If you have questions, ask your neighbour. [Code learning is social](https://andromedayelton.com/2013/11/25/reflecting-on-introduction-to-python-for-librarians/). If there's still any remaining questions, put up a stickie and one of us will come and help out
+* If you have questions, ask your neighbour. [Code learning is social](https://andromedayelton.com/2013/11/25/reflecting-on-introduction-to-python-for-librarians/). If there's still any remaining questions, put up a stickie and one of us will come and help out.
 * We're going to take up the exercises after 10, 20, and 45 minutes.
 * When we take up the exercises, We're going to ask you:
    * Show us how you worked through the problem. What resources did you consult?
-   * Provide everyone with a walkthrough of the answer we'll follow along on our screen
+   * Provide everyone with a walkthrough of the answer we'll follow along on our screen.
    * What problems did you run into along the way? Talk about the tiny mistakes you might have made along the way, things like syntax errors, formatting issues, and so on.
 
 #### Exercise 1
 
 Basic Usage - Creating Content
 
-Although Hugo doesn't have a GUI to manage and edit content, it's not only designed for developers to use. The use of readable standards like Markdown, the templates and content organization layouts make it a little easier for content managers and authors to use.
+Although Hugo doesn't have a GUI to manage and edit content, it's not only designed for developers to use. The use of readable standards like Markdown, the templates, and content organization layouts make it a little easier for content managers and authors to use.
 
 The first exercise is to go through a typical authoring and publishing workflow.
 
